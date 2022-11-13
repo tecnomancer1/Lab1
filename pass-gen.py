@@ -9,23 +9,47 @@ import string
 low_ch = list(string.ascii_lowercase)
 up_ch = list(string.ascii_uppercase)
 digits = list(string.digits)
-special_characters = list("!#$%&'*+‑/")
+special_ch = list("!#$%&'*+‑/")
 characters = list(string.ascii_lowercase + string.ascii_uppercase + string.digits + "!#$%&'*+‑/")
 
 
 def generate_random_password():
-    ## length of password from the user
+    ## total password lenght
     pass_length = int(input("Enter password length: "))
 
     ## number of character types
-    char_count = int(input("Enter alphabets count in password: "))
+    up_ch_count = int(input("Enter number of uppercase characters in password: "))
+    low_ch_count = int(input("Enter number of lowercase characters in password:"))
     digits_count = int(input("Enter number of digits in password: "))
     specials_count = int(input("Enter number of special characters n password: "))
 
-    char_count = char_count + digits_count + specials_count
+    char_count = up_ch_count + low_ch_count+ digits_count + specials_count
 
-    ## check the total length with characters sum count
-    ## print not valid if the sum is greater than length
+    ## check if total length is bigger or equal to ch_count
+    ## print if the total lenght is not valid
     if char_count > pass_length:
         print("Characters total count is greater than the password length")
         return
+
+        ## creating the password
+        password = []
+
+        ## picking random characters per charater set
+        for i in range(up_ch_count):
+            password.append(random.choice(up_ch))
+
+        for i in range(low_ch_count):
+            password.append(random.choice(low_ch))
+
+        for i in range(digits_count):
+            password.append(random.choice(digits))
+
+        for i in range(special_characters_count):
+            password.append(random.choice(special_ch))
+
+        ## check total number of password characters and add random characters if
+        ## password is too short
+        if characters_count < length:
+            random.shuffle(characters)
+            for i in range(length - characters_count):
+                password.append(random.choice(characters))
