@@ -1,9 +1,9 @@
 # This is a another sample Python script.
 
 # Define the string
-string = 'Python is one of the scripting languages'
+string = 'Powershell is another scripting languages'
 # Define the search string
-search = 'is'
+search = 'p'
 # Store the count value
 count = string.count(search)
 # Print the formatted output
