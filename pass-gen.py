@@ -1,6 +1,5 @@
 # Password generator program based on code publshed in "Build 24 Ethical Hacking Scripts & Tools with Python" book
 
-from argparse import ArgumentParser
 import secrets
 import random
 import string
@@ -13,7 +12,7 @@ special_ch = list("!#$%&'*+‑/")
 characters = list(string.ascii_lowercase + string.ascii_uppercase + string.digits + "!#$%&'*+‑/")
 
 
-def generate_random_password():
+def random_password_generator():
     ## total password lenght
     pass_length = int(input("Enter password length: "))
 
@@ -53,3 +52,12 @@ def generate_random_password():
             random.shuffle(characters)
             for i in range(length - characters_count):
                 password.append(random.choice(characters))
+
+        ## password randomization
+        random.shuffle(password)
+
+        ## printing password
+        print("".join(password))
+
+## invoking the function
+random_password_generator()
