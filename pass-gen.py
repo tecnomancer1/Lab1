@@ -1,4 +1,4 @@
-# Password generator program based on code publshed in "Build 24 Ethical Hacking Scripts & Tools with Python" book
+# Password generator program based on code published in "Build 24 Ethical Hacking Scripts & Tools with Python" book
 
 import secrets
 import random
