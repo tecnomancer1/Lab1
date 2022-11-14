@@ -28,8 +28,7 @@ def random_password_generator():
     ## print if the total lenght is not valid
     if char_count > pass_length:
         print("Characters total count is greater than the password length")
-        return
-
+    else:
         ## creating the password
         password = []
 
@@ -43,14 +42,14 @@ def random_password_generator():
         for i in range(digits_count):
             password.append(random.choice(digits))
 
-        for i in range(special_characters_count):
+        for i in range(specials_count):
             password.append(random.choice(special_ch))
 
         ## check total number of password characters and add random characters if
         ## password is too short
-        if characters_count < length:
+        if char_count < pass_length:
             random.shuffle(characters)
-            for i in range(length - characters_count):
+            for i in range(pass_length - char_count):
                 password.append(random.choice(characters))
 
         ## password randomization
